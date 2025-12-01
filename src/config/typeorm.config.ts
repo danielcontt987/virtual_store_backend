@@ -13,6 +13,6 @@ export const typeOrmConfig = (configService: ConfigService) : TypeOrmModuleOptio
     entities:[
         join(__dirname + '../../**/*.entity.{js,ts}')
     ],
-    synchronize: false,
+    synchronize: true,
     autoLoadEntities: true,
 })

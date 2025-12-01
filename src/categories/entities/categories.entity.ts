@@ -1,8 +1,10 @@
+import { Product } from '../../products/entities/product.entity';
 import {
     Column,
     CreateDateColumn,
     DeleteDateColumn,
     Entity,
+    OneToMany,
     PrimaryGeneratedColumn,
     UpdateDateColumn
 } from 'typeorm';
@@ -14,6 +16,9 @@ export class Category {
 
     @Column({ type: 'varchar', length: 60 })
     name: string;
+
+    @OneToMany(() => Product, (product) => product.category, {cascade: true})
+    products: Product
 
     @CreateDateColumn({ type: 'timestamp' })
     created_at: Date;
