@@ -19,7 +19,7 @@ export class Product {
     @Column({ type: 'int' })
     inventory: number
 
-    @ManyToOne(() => Category, {eager: true})
+    @ManyToOne(() => Category) // {eager: true} genera la relación automatica
     @JoinColumn({name: 'category_id'}) // renombra la columna
     category: Category
 
